@@ -19,4 +19,3 @@ export const addProductsToCart = (value) => ({
   type: ActionTypes.CART_ADD_PRODUCT,
   payload: value,
 })
-
