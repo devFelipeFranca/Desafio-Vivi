@@ -10,8 +10,13 @@ export const updateProducts = (value) => ({
   payload: value,
 })
 
+export const updateCategory = (value) => ({
+  type: ActionTypes.UPDADE_CATEGORY,
+  payload: value,
+})
 
 export const addProductsToCart = (value) => ({
   type: ActionTypes.CART_ADD_PRODUCT,
   payload: value,
 })
+

@@ -15,15 +15,13 @@ function SearchButton() {
   }
  
   return (
-    <div>
-      <button
-        type='button'
-        className="button"
-        onClick={ handleClick }
-      >
-        Pesquisar
-      </button>
-    </div>
+    <button
+      type='button'
+      className="button"
+      onClick={ handleClick }
+    >
+      Pesquisar
+    </button>
   );
 }
 

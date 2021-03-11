@@ -4,9 +4,11 @@ import { useSelector } from 'react-redux';
 import InputSearch from '../../components/InputSearch';
 import NavBar from '../../components/NavBar';
 import Card from '../../components/Card'
+import MenuCategory from '../../components/InputSearch/components/MenuCategory';
 
 import '../../styles/bulma.min.css'
 import '../../styles/searchGroup.css'
+import '../../styles/main.css'
 
 function Home() {
 
@@ -14,18 +16,21 @@ function Home() {
 
   return (
     <>
-      <NavBar products={ cartProduct }/>
-      <InputSearch />
-      <section className="content">
-        { products.map(product => <>
-          <Card
-            thumbnail={ product.thumbnail }
-            title={ product.title }
-            price={ product.price }
-            idOfEachProduct={ product.id }
-          /> 
-        </>) }
-      </section>
+      <MenuCategory />      
+      <div className='main'>
+        <NavBar products={ cartProduct }/>
+        <InputSearch />
+        <div className="content main">
+          { products.map(product => <>
+            <Card
+              thumbnail={ product.thumbnail }
+              title={ product.title }
+              price={ product.price }
+              idOfEachProduct={ product.id }
+            /> 
+          </>) }
+        </div>
+      </div>
     </>
   );
 }

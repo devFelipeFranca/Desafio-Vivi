@@ -1,0 +1,15 @@
+.sidenav {
+  text-align: center;
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+@media screen and (max-width: 850px) {
+  .sidenav {display: none;}
+}
