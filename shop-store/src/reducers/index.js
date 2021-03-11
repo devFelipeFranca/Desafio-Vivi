@@ -1,8 +1,7 @@
 import * as ActionTypes from '../common/actionTypes';
-import initialProducts from '../settings/productsDataBase.json'
+import initialProducts from '../mock/productsDataBase.json'
 
 const INITIAL_STATE = {
-  isActive: "dropdown",
   category:'',
   query:'',
   products: initialProducts,
@@ -11,20 +10,16 @@ const INITIAL_STATE = {
 
 export default function state(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case ActionTypes.DROPDOWN_ACTIVE:
-      return {...state, isActive: action.msg}
-    case ActionTypes.DROPDOWN_INACTIVE:
-      return {...state, isActive: action.msg}
     case ActionTypes.UPDATE_QUERY:
-      return {...state, query: action.query}
+      return {...state, query: action.payload}
     case ActionTypes.UPDADE_CATEGORY:
-      return {...state, category: action.category}
+      return {...state, category: action.payload}
     case ActionTypes.UPDADE_PRODUCTS:
-      return {...state, products: action.products}
+      return {...state, products: action.payload}
     case ActionTypes.CART_ADD_PRODUCT:
-      return {...state, CC: [ ...state.CC, action.addOfCC ]}
-    case ActionTypes.CART_REM_PRODUCT:
-      return {...state, CC: action.rmOfCC}
+      return {...state, cartProduct: [ ...state.cartProduct, action.payload ]}
+    case ActionTypes.CLEAR_PRODUCT_CART:
+      return {...state, cartProductC: action.payload}
     default:
       return {...state}
   }

@@ -5,9 +5,13 @@ import {
   Route
 } from "react-router-dom";
 
+import Home from './pages/Home';
+import Cart from './pages/Cart';
+
 import store from './store';
 
-import './css/bulma.min.css'
+import './styles/bulma.min.css';
+import './styles/searchGroup.css';
 
 function App() {
   return (  
@@ -17,7 +21,7 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/CC">
+          <Route path="/products_cart">
             <Cart />
           </Route>
         </Switch>
